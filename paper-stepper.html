@@ -48,7 +48,7 @@ A Material Design [stepper](https://www.google.com/design/spec/components/steppe
 			}
 		</style>
 
-		<paper-button class="nav" on-tap="_tapPrevious" disabled="[[!_getDisablePrevious(selected, disablePrevious)]]">
+		<paper-button class="nav" on-tap="_tapPrevious" disabled="[[!_getDisablePrevious(selected, disablePrevious)]]" hidden$="[[noButtons]]">
 			<iron-icon icon="icons:chevron-left"></iron-icon>
 			[[backLabel]]
 		</paper-button>
@@ -63,7 +63,7 @@ A Material Design [stepper](https://www.google.com/design/spec/components/steppe
 			<paper-progress class="flex progress" max="[[_items.length]]" value="[[_computeProgressValue(selected, _items)]]"></paper-progress>
 		</template>
 
-		<paper-button class="nav" on-tap="_tapNext" disabled="[[!_getDisableNext(selected, _items.length, disableNext)]]">
+		<paper-button class="nav" on-tap="_tapNext" disabled="[[!_getDisableNext(selected, _items.length, disableNext)]]" hidden$="[[noButtons]]">
 			[[nextLabel]]
 			<iron-icon icon="icons:chevron-right"></iron-icon>
 		</paper-button>
@@ -124,7 +124,15 @@ A Material Design [stepper](https://www.google.com/design/spec/components/steppe
 			disableNext: {
 				type: Boolean,
 				value: false
-			}
+			},
+
+			/**
+			 * Hide back/next buttons
+			 */
+			noButtons: {
+				type: Boolean,
+				value: false,
+			},
 		},
 
 		// Private methods

@@ -6,6 +6,7 @@
 		<link rel="import" href="../../iron-pages/iron-pages.html">
 		<link rel="import" href="../../iron-icons/image-icons.html">
 		<link rel="import" href="../../paper-button/paper-button.html">
+		<link rel="import" href="../../paper-checkbox/paper-checkbox.html">
 		<link rel="import" href="../paper-stepper.html">
 		<link rel="import" href="../paper-step.html">
 		<link rel="import" href="../paper-icon-stepper.html">
@@ -18,7 +19,7 @@
 
 			<div class="vertical-section">
 				<template is="dom-bind">
-					<paper-stepper selected="{{selected}}">
+					<paper-stepper selected="{{selected}}" no-buttons="[[noButtons]]">
 						<paper-step></paper-step>
 						<paper-step></paper-step>
 						<paper-step></paper-step>
@@ -31,6 +32,10 @@
 						<div>Step 3</div>
 						<div>Step 4</div>
 					</iron-pages>
+
+					<br>
+
+					<paper-checkbox checked="{{noButtons}}">No buttons</paper-checkbox>
 				</template>
 			</div>
 
