@@ -55,7 +55,7 @@ A Material Design [stepper](https://www.google.com/design/spec/components/steppe
 
 		<div class="flex steps" hidden$="[[progressBar]]">
 			<iron-selector id="selector" selected="{{selected}}" items="{{_items}}" on-iron-items-changed="_onItemsChanged">
-				<content></content>
+				<slot></slot>
 			</iron-selector>
 		</div>
 
