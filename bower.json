@@ -31,7 +31,6 @@
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
     "iron-pages": "PolymerElements/iron-pages#^1.0.0",
     "paper-checkbox": "PolymerElements/paper-checkbox#^1.0.0",
-    "test-fixture": "PolymerElements/test-fixture#^1.0.0",
     "web-component-tester": "*",
     "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
   }
