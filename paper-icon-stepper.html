@@ -40,7 +40,7 @@ A Material Design [stepper](https://www.google.com/design/spec/components/steppe
 
 		<div class="flex steps">
 			<iron-selector id="selector" multi selected-values="{{selectedValues}}" items="{{_items}}" on-iron-items-changed="_onItemsChanged">
-				<content></content>
+				<slot></slot>
 			</iron-selector>
 		</div>
 
