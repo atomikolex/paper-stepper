@@ -39,15 +39,19 @@
 					});
 
 					test('goes to next step', function() {
-						element.selected = 1;
-						element._tapNext();
-						expect(element.selected).to.be.eql(2);
+						Polymer.Base.async(function() {
+							element.selected = 1;
+							element._tapNext();
+							expect(element.selected).to.be.eql(2);
+						});
 					});
 
 					test('returns to previous step', function() {
-						element.selected = 1;
-						element._tapPrevious();
-						expect(element.selected).to.be.eql(0);
+						Polymer.Base.async(function() {
+							element.selected = 1;
+							element._tapPrevious();
+							expect(element.selected).to.be.eql(0);
+						});
 					});
 
 					test('shows previous step if not in the beginning', function() {
