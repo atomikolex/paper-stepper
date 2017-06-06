@@ -4,7 +4,7 @@ _[Demo and API Docs](http://collaborne.github.io/paper-stepper)_
 paper-stepper [![Bower version](https://badge.fury.io/bo/paper-stepper.svg)](http://badge.fury.io/bo/paper-stepper) [![Travis state](https://travis-ci.org/Collaborne/paper-stepper.svg?branch=master)](https://travis-ci.org/Collaborne/paper-stepper)
 =========
 
-A Material Design [stepper](https://www.google.com/design/spec/components/steppers.html). This element is built for [Polymer 1.x](https://www.polymer-project.org).
+A Material Design [stepper](https://www.google.com/design/spec/components/steppers.html). This element is built for [Polymer](https://www.polymer-project.org).
 
 ![Screenshot](/doc/screenshot.png "Screenshot")
 

@@ -14,11 +14,11 @@
 	</head>
 
 	<body>
-		<template is="dom-bind">
-			<h2>Stepper with dots</h2>
+		<dom-bind>
+			<template>
+				<h2>Stepper with dots</h2>
 
-			<div class="vertical-section">
-				<template is="dom-bind">
+				<div class="vertical-section">
 					<paper-stepper selected="{{selected}}" no-buttons="[[noButtons]]">
 						<paper-step></paper-step>
 						<paper-step></paper-step>
@@ -36,44 +36,44 @@
 					<br>
 
 					<paper-checkbox checked="{{noButtons}}">No buttons</paper-checkbox>
-				</template>
-			</div>
+				</div>
 
-			<h2>Stepper with progress bar</h2>
+				<h2>Stepper with progress bar</h2>
 
-			<div class="vertical-section">
-				<paper-stepper progress-bar>
-					<paper-step></paper-step>
-					<paper-step></paper-step>
-					<paper-step></paper-step>
-					<paper-step></paper-step>
-				</paper-stepper>
-			</div>
+				<div class="vertical-section">
+					<paper-stepper progress-bar>
+						<paper-step></paper-step>
+						<paper-step></paper-step>
+						<paper-step></paper-step>
+						<paper-step></paper-step>
+					</paper-stepper>
+				</div>
 
-			<h2>Localized stepper</h2>
+				<h2>Localized stepper</h2>
 
-			<div class="vertical-section">
-				<paper-stepper back-label="Zurück" next-label="Vor">
-					<paper-step></paper-step>
-					<paper-step></paper-step>
-				</paper-stepper>
-			</div>
+				<div class="vertical-section">
+					<paper-stepper back-label="Zurück" next-label="Vor">
+						<paper-step></paper-step>
+						<paper-step></paper-step>
+					</paper-stepper>
+				</div>
 
-			<h2>Icon stepper</h2>
+				<h2>Icon stepper</h2>
 
-			<div class="vertical-section">
-				<paper-icon-stepper id="stepper">
-					<paper-icon-step icon="image:brightness-1"></paper-icon-step>
-					<paper-icon-step icon="image:brightness-1"></paper-icon-step>
-					<paper-icon-step icon="image:brightness-1"></paper-icon-step>
-					<paper-icon-step icon="image:brightness-1"></paper-icon-step>
-				</paper-icon-stepper>
-				<paper-button raised on-tap="prev">prev</paper-button><paper-button raised on-tap="next">next</paper-button><paper-button raised on-tap="clear">clear</paper-button>
-			</div>
-		</template>
+				<div class="vertical-section">
+					<paper-icon-stepper id="stepper">
+						<paper-icon-step icon="image:brightness-1"></paper-icon-step>
+						<paper-icon-step icon="image:brightness-1"></paper-icon-step>
+						<paper-icon-step icon="image:brightness-1"></paper-icon-step>
+						<paper-icon-step icon="image:brightness-1"></paper-icon-step>
+					</paper-icon-stepper>
+					<paper-button raised on-tap="prev">prev</paper-button><paper-button raised on-tap="next">next</paper-button><paper-button raised on-tap="clear">clear</paper-button>
+				</div>
+			</template>
+		</dom-bind>
 
 		<script>
-			var scope = document.querySelector('template[is=dom-bind]');
+			var scope = document.querySelector('dom-bind');
 			scope.next = function() {
 				this.$.stepper.next();
 			};
