@@ -14,12 +14,12 @@
 	</head>
 
 	<body>
+		<h2>Stepper with dots</h2>
+
 		<dom-bind>
 			<template>
-				<h2>Stepper with dots</h2>
-
 				<div class="vertical-section">
-					<paper-stepper selected="{{selected}}" no-buttons="[[noButtons]]">
+					<paper-stepper selected="{{selected}}" no-buttons="[[noButtons]]" disabled="[[disabled]]">
 						<paper-step></paper-step>
 						<paper-step></paper-step>
 						<paper-step></paper-step>
@@ -35,31 +35,45 @@
 
 					<br>
 
-					<paper-checkbox checked="{{noButtons}}">No buttons</paper-checkbox>
+					<paper-checkbox checked="{{noButtons}}">No buttons</paper-checkbox><br>
+					<paper-checkbox checked="{{disabled}}">Disabled</paper-checkbox>
 				</div>
+			</template>
+		</dom-bind>
 
-				<h2>Stepper with progress bar</h2>
+		<h2>Stepper with progress bar</h2>
 
+		<dom-bind>
+			<template>
 				<div class="vertical-section">
-					<paper-stepper progress-bar>
+					<paper-stepper progress-bar no-buttons="[[noButtons]]" disabled="[[disabled]]">
 						<paper-step></paper-step>
 						<paper-step></paper-step>
 						<paper-step></paper-step>
 						<paper-step></paper-step>
 					</paper-stepper>
+
+					<br>
+
+					<paper-checkbox checked="{{noButtons}}">No buttons</paper-checkbox><br>
+					<paper-checkbox checked="{{disabled}}">Disabled</paper-checkbox>
 				</div>
+			</template>
+		</dom-bind>
 
-				<h2>Localized stepper</h2>
+		<h2>Localized stepper</h2>
 
-				<div class="vertical-section">
-					<paper-stepper back-label="Zurück" next-label="Vor">
-						<paper-step></paper-step>
-						<paper-step></paper-step>
-					</paper-stepper>
-				</div>
+		<div class="vertical-section">
+			<paper-stepper back-label="Zurück" next-label="Vor">
+				<paper-step></paper-step>
+				<paper-step></paper-step>
+			</paper-stepper>
+		</div>
 
-				<h2>Icon stepper</h2>
+		<h2>Icon stepper</h2>
 
+		<dom-bind>
+			<template>
 				<div class="vertical-section">
 					<paper-icon-stepper id="stepper">
 						<paper-icon-step icon="image:brightness-1"></paper-icon-step>
@@ -71,7 +85,6 @@
 				</div>
 			</template>
 		</dom-bind>
-
 		<script>
 			var scope = document.querySelector('dom-bind');
 			scope.next = function() {
@@ -84,5 +97,6 @@
 				this.$.stepper.clear();
 			};
 		</script>
+
 	</body>
 </html>

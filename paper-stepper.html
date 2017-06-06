@@ -49,13 +49,21 @@ A Material Design [stepper](https://www.google.com/design/spec/components/steppe
 			}
 		</style>
 
-		<paper-button class="nav" on-tap="_tapPrevious" disabled="[[!_getDisablePrevious(selected, disablePrevious)]]" hidden$="[[noButtons]]">
+		<paper-button
+			class="nav"
+			on-tap="_tapPrevious"
+			disabled="[[!_getDisablePrevious(selected, disablePrevious, disabled)]]"
+			hidden$="[[noButtons]]">
 			<iron-icon icon="icons:chevron-left"></iron-icon>
 			[[backLabel]]
 		</paper-button>
 
 		<div class="flex steps" hidden$="[[progressBar]]">
-			<iron-selector id="selector" selected="{{selected}}" items="{{_items}}" on-iron-items-changed="_onItemsChanged">
+			<iron-selector
+				id="selector"
+				selected="{{selected}}"
+				items="{{_items}}"
+				on-iron-items-changed="_onItemsChanged">
 				<slot></slot>
 			</iron-selector>
 		</div>
@@ -64,7 +72,11 @@ A Material Design [stepper](https://www.google.com/design/spec/components/steppe
 			<paper-progress class="flex progress" max="[[_items.length]]" value="[[_computeProgressValue(selected, _items)]]"></paper-progress>
 		</template>
 
-		<paper-button class="nav" on-tap="_tapNext" disabled="[[!_getDisableNext(selected, _items.length, disableNext)]]" hidden$="[[noButtons]]">
+		<paper-button
+			class="nav"
+			on-tap="_tapNext"
+			disabled="[[!_getDisableNext(selected, _items.length, disableNext, disabled)]]"
+			hidden$="[[noButtons]]">
 			[[nextLabel]]
 			<iron-icon icon="icons:chevron-right"></iron-icon>
 		</paper-button>
@@ -113,6 +125,14 @@ A Material Design [stepper](https://www.google.com/design/spec/components/steppe
 				value: 'Next'
 			},
 			/**
+			 * True if the user can't change the selected step
+			 */
+			disabled: {
+				type: Boolean,
+				value: false,
+				observer: '_onDisabledChanged'
+			},
+			/**
 			 * Boolean for disabling the previous button.
 			 */
 			disablePrevious: {
@@ -148,16 +168,16 @@ A Material Design [stepper](https://www.google.com/design/spec/components/steppe
 		 * Returns true if there is a step before the current and if
 		 * _getDisablePrevious is set to false
 		 */
-		_getDisablePrevious: function(selected, disablePrevious) {
-			return selected > 0 && !disablePrevious;
+		_getDisablePrevious: function(selected, disablePrevious, disabled) {
+			return selected > 0 && !disablePrevious && !disabled;
 		},
 
 		/**
 		 * Returns true if there is a step after the current and if
 		 * _getDisableNext is set to false
 		 */
-		_getDisableNext: function(selected, nrItems, disableNext) {
-			return selected < nrItems - 1 && !disableNext;
+		_getDisableNext: function(selected, nrItems, disableNext, disabled) {
+			return selected < nrItems - 1 && !disableNext && !disabled;
 		},
 
 		/**
@@ -174,7 +194,12 @@ A Material Design [stepper](https://www.google.com/design/spec/components/steppe
 
 		_onItemsChanged: function(e) {
 			this._items = this.$.selector.items;
-		}
+		},
+
+		_onDisabledChanged: function(disabled) {
+			this.$.selector.selectable = disabled ? 'paper-stepper-none' : null;
+			this.$.selector._updateItems();
+		},
 	});
 
 })();
