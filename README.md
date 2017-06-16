@@ -26,6 +26,8 @@ To use the element:
     <paper-step></paper-step>
 </paper-stepper>
 
+<br>
+
 <paper-stepper progress-bar>
     <paper-step></paper-step>
     <paper-step></paper-step>
