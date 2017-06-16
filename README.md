@@ -25,6 +25,13 @@ To use the element:
     <paper-step></paper-step>
     <paper-step></paper-step>
 </paper-stepper>
+
+<paper-stepper progress-bar>
+    <paper-step></paper-step>
+    <paper-step></paper-step>
+    <paper-step></paper-step>
+    <paper-step></paper-step>
+</paper-stepper>
 ```
 
 
