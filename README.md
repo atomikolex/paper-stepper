@@ -1,16 +1,31 @@
-_[Demo and API Docs](http://collaborne.github.io/paper-stepper)_
-
-
-paper-stepper [![Bower version](https://badge.fury.io/bo/paper-stepper.svg)](http://badge.fury.io/bo/paper-stepper) [![Travis state](https://travis-ci.org/Collaborne/paper-stepper.svg?branch=master)](https://travis-ci.org/Collaborne/paper-stepper)
+paper-stepper [![Bower version](https://badge.fury.io/bo/paper-stepper.svg)](http://badge.fury.io/bo/paper-stepper) [![Travis state](https://travis-ci.org/Collaborne/paper-stepper.svg?branch=master)](https://travis-ci.org/Collaborne/paper-stepper) [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/Collaborne/paper-stepper)
 =========
 
 A Material Design [stepper](https://www.google.com/design/spec/components/steppers.html). This element is built for [Polymer](https://www.polymer-project.org).
 
-![Screenshot](/doc/screenshot.png "Screenshot")
-
 To use the element:
 
 `bower install paper-stepper`
+
+<!--
+```
+<custom-element-demo>
+  <template>
+    <link rel="import" href="paper-stepper.html">
+    <link rel="import" href="paper-step.html">
+    <next-code-block></next-code-block>
+  </template>
+</custom-element-demo>
+```
+-->
+```html
+<paper-stepper>
+    <paper-step></paper-step>
+    <paper-step></paper-step>
+    <paper-step></paper-step>
+    <paper-step></paper-step>
+</paper-stepper>
+```
 
 
 ## License
